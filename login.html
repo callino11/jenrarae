@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>One Question 💕</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -17,7 +17,8 @@
       height: 100vh;
       margin: 0;
     }
-    .question-box {
+
+    .box {
       background: white;
       padding: 30px;
       border-radius: 15px;
@@ -26,19 +27,26 @@
       max-width: 380px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
-    input, button {
+
+    input {
       width: 100%;
       padding: 12px;
-      margin-top: 12px;
+      margin: 15px 0;
       border-radius: 8px;
-      font-size: 16px;
+      border: 1px solid #ccc;
+      text-align: center;
     }
+
     button {
+      width: 100%;
+      padding: 12px;
       background: #ff5e78;
       color: white;
       border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
+
     .error {
       color: #ff3f5e;
       display: none;
@@ -48,17 +56,17 @@
 </head>
 <body>
 
-  <div class="question-box">
-    <h2>💖 One Question 💖</h2>
-    <p>What date is our anniversary?</p>
+<div class="box">
+  <h2>💖 One Question 💖</h2>
+  <p>What date did we officially start dating?</p>
 
-    <input id="answer" placeholder="December 14, 2019" autocomplete="off">
+  <input id="answer" placeholder="December 14, 2019" />
+  <button onclick="checkAnswer()">Continue 💕</button>
 
-    <button onclick="checkAnswer()">Continue 💕</button>
+  <p class="error" id="error">That doesn’t feel right 💔</p>
+</div>
 
-    <p class="error" id="error">That’s not it 💔</p>
-  </div>
-
-  <script src="login.js"></script>
+<script src="login.js"></script>
 </body>
 </html>
+

@@ -179,6 +179,26 @@ footer button {
   color: white;
   cursor: pointer;
 }
+/* Love Letter Container */
+.letter-container {
+  background: #ffd6d6;
+  padding: 30px;
+  border-radius: 25px;
+  border: 4px solid #ff6f91;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+}
+
+/* Love Letter Image */
+.love-letter {
+  width: 100%;
+  max-width: 450px;
+  display: block;
+  margin: auto;
+  border-radius: 15px;
+}
 
 
 

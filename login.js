@@ -7,8 +7,12 @@ function normalize(text) {
 }
 
 function checkAnswer() {
-  const input = document.getElementById("answer").value;
+  const inputEl = document.getElementById("answer");
   const error = document.getElementById("error");
+
+  if (!inputEl) return;
+
+  const input = inputEl.value;
 
   // 💖 OFFICIAL DATE
   const acceptedAnswers = [
@@ -26,6 +30,7 @@ function checkAnswer() {
   );
 
   if (isCorrect) {
+    error.style.display = "none";
     localStorage.setItem("isLoggedIn", "true");
     window.location.href = "index.html";
   } else {

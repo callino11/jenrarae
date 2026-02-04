@@ -17,7 +17,6 @@
       height: 100vh;
       margin: 0;
     }
-
     .question-box {
       background: white;
       padding: 30px;
@@ -27,11 +26,6 @@
       max-width: 380px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
-
-    h2 {
-      margin-bottom: 15px;
-    }
-
     input {
       width: 100%;
       padding: 12px;
@@ -41,7 +35,6 @@
       font-size: 16px;
       text-align: center;
     }
-
     button {
       width: 100%;
       padding: 12px;
@@ -52,11 +45,9 @@
       font-size: 16px;
       cursor: pointer;
     }
-
     button:hover {
       background: #ff3f5e;
     }
-
     .error {
       color: #ff3f5e;
       margin-top: 10px;
@@ -73,11 +64,10 @@
     <input
       type="text"
       id="answer"
-      placeholder="Example: Febuary 14, 2026"
+      placeholder="Example: December 14, 2019"
       autocomplete="off"
     >
 
-    <!-- ✅ IMPORTANT FIX -->
     <button type="button" onclick="checkAnswer()">Continue 💕</button>
 
     <p class="error" id="error">Hmm… that doesn’t feel right 💔</p>
@@ -86,3 +76,4 @@
   <script src="login.js"></script>
 </body>
 </html>
+

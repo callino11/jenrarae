@@ -1,11 +1,15 @@
-function login() {
-  const password = document.getElementById("password").value;
+function normalize(text) {
+  return text.trim().toLowerCase();
+}
+
+function checkAnswer() {
+  const input = document.getElementById("answer").value;
   const error = document.getElementById("error");
 
-  // CHANGE PASSWORD HERE
-  const correctPassword = "jenrarae123";
+  // 💖 CHANGE THIS TO YOUR REAL DATE
+  const correctAnswer = "february 14, 2024";
 
-  if (password === correctPassword) {
+  if (normalize(input) === normalize(correctAnswer)) {
     localStorage.setItem("isLoggedIn", "true");
     window.location.href = "index.html";
   } else {

@@ -5,24 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Valentine's Day My Love 💕</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Floating Hearts -->
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+
   <div id="hearts-container"></div>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h1>Happy Valentine's Day</h1>
-    <h2>My Love 💖</h2>
-    <p class="names">Cara Raee</p>
+    <h1>My Love 💖</h1>
+    <h1 class="names">Cara Rae</h1>
   </section>
 
-  <!-- Love Letter -->
   <section class="letter">
     <div class="letter-card">
       <h3>My Love Letter 💌</h3>
@@ -38,32 +39,29 @@
     </div>
   </section>
 
-  <!-- Photo Gallery -->
   <section class="gallery">
     <h3>Our Memories 📸</h3>
     <div class="grid">
-      <img src="assets/images/photo1.jpg" alt="Memory 1">
-      <img src="assets/images/photo2.jpg" alt="Memory 2">
-      <img src="assets/images/photo3.jpg" alt="Memory 3">
-      <img src="assets/images/photo4.jpg" alt="Memory 4">
+      <img src="mylove.jpg.png">
+      <img src="mylove.jpg2.png">
+      <img src="mylove.jpg3.png">
+      <img src="mylove.jpg4.png">
     </div>
   </section>
 
-  <!-- Music Player -->
- <div class="music-player">
+  <div class="music-player">
     <button id="music-btn">▶ Play Music</button>
     <audio id="bg-music" src="assets/music/love-song.mp3"></audio>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>Made with endless love 💕</p>
+    <button onclick="logout()">Logout</button>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
 
 
 

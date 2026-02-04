@@ -137,4 +137,14 @@ footer button {
   font-weight: 500;
   color: #5a2a2a;
 }
+/* ===============================
+   FORCE HERO TEXT COLOR TO BLACK
+================================ */
+.hero h1,
+.hero h2,
+.hero .subtitle,
+.hero .names {
+  color: #000000;
+}
+
 

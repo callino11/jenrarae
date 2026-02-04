@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<!-- LOGIN PROTECTION -->
 <script>
   if (localStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "login.html";
@@ -49,24 +50,16 @@
   </div>
 </section>
 
+<!-- MUSIC PLAYER -->
 <div class="music-player">
   <button id="music-btn">▶ Play Music</button>
+  <audio id="bg-music" src="assets/music/love-song.mp3"></audio>
 </div>
 
 <footer>
   <p>Made with endless love 💕</p>
   <button onclick="logout()">Logout</button>
 </footer>
-
-<iframe
-  id="yt-music"
-  width="1"
-  height="1"
-  src="https://www.youtube.com/embed/KrvzDsiBgn4?enablejsapi=1&autoplay=0&mute=1"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  style="display:none;"
-></iframe>
 
 <script src="script.js"></script>
 </body>

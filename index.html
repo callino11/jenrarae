@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Valentine's Day My Love 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOGIN PROTECTION -->
 <script>
   if (localStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "login.html";
@@ -28,14 +27,7 @@
 <section class="letter">
   <div class="letter-card">
     <h3>My Love Letter 💌</h3>
-    <p>
-      My love, every day with you feels like a beautiful dream I never want to wake up from.
-      You are my peace, my happiness, and my greatest blessing.
-    </p>
-    <p>
-      Thank you for loving me, supporting me, and choosing me every single day.
-      I promise to love you endlessly — today, tomorrow, and always.
-    </p>
+    <p>You are my peace, my happiness, and my forever.</p>
     <p class="signature">Forever yours ❤️</p>
   </div>
 </section>
@@ -50,16 +42,22 @@
   </div>
 </section>
 
-<!-- MUSIC PLAYER -->
 <div class="music-player">
   <button id="music-btn">▶ Play Music</button>
-  <audio id="bg-music" src="assets/music/love-song.mp3"></audio>
 </div>
 
 <footer>
   <p>Made with endless love 💕</p>
   <button onclick="logout()">Logout</button>
 </footer>
+
+<!-- 🎵 YOUTUBE MUSIC -->
+<iframe
+  id="yt-music"
+  src="https://www.youtube.com/embed/KrvzDsiBgn4?enablejsapi=1&autoplay=0&mute=1"
+  allow="autoplay"
+  style="display:none;"
+></iframe>
 
 <script src="script.js"></script>
 </body>

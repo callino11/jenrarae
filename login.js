@@ -7,7 +7,7 @@ function checkAnswer() {
   const error = document.getElementById("error");
 
   // 💖 CHANGE THIS TO YOUR REAL DATE
-  const correctAnswer = "february 14, 2024";
+  const correctAnswer = "December 14, 2019";
 
   if (normalize(input) === normalize(correctAnswer)) {
     localStorage.setItem("isLoggedIn", "true");

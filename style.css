@@ -59,22 +59,22 @@ body {
 /* ===============================
    HERO LETTER CARD
 ================================ */
-.hero-card {
-  background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    ),
-    url("image5.png") center no-repeat;
+<section class="hero">
+  <div class="hero-card">
+    <h1>
+      Happy<br>
+      Valentine’s<br>
+      Day
+    </h1>
 
-  background-size: cover;
-  padding: 50px 40px;
-  border-radius: 32px; /* ❗ fixed from 900px */
-  box-shadow: 0 25px 55px rgba(0,0,0,0.25);
-  max-width: 420px;
-  width: 100%;
-  backdrop-filter: blur(6px);
-}
+    <h2 class="subtitle">
+      My Love 💖
+    </h2>
+
+    <p class="names">Cara Rae</p>
+  </div>
+</section>
+
 
 /* HERO TEXT */
 .hero h1 {

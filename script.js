@@ -26,10 +26,11 @@ function createHeart() {
   }, 6000);
 }
 
+// start floating hearts
 setInterval(createHeart, 400);
 
 /* ===============================
-   MUSIC CONTROL
+   YOUTUBE MUSIC CONTROL
 ================================ */
 const musicBtn = document.getElementById("music-btn");
 const ytMusic = document.getElementById("yt-music");
@@ -39,13 +40,29 @@ let musicStarted = false;
 if (musicBtn && ytMusic) {
   musicBtn.addEventListener("click", () => {
     if (!musicStarted) {
-      // unmute & start playback
-      ytMusic.src = ytMusic.src.replace("&mute=1", "&mute=0&autoplay=1");
+      // Start & unmute YouTube music
+      ytMusic.src = ytMusic.src.includes("mute=1")
+        ? ytMusic.src.replace("mute=1", "mute=0&autoplay=1")
+        : ytMusic.src + "&autoplay=1";
+
       musicBtn.textContent = "🎵 Music Playing";
       musicStarted = true;
     }
   });
 }
+
+/* ===============================
+   AUTO PLAY AFTER LOGIN (OPTIONAL)
+================================ */
+if (localStorage.getItem("playMusic") === "true") {
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      musicBtn?.click();
+      localStorage.removeItem("playMusic");
+    }, 800);
+  });
+}
+
 /* ===============================
    ON LOAD EFFECT
 ================================ */
@@ -60,5 +77,6 @@ window.addEventListener("load", () => {
 ================================ */
 function logout() {
   localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("playMusic");
   window.location.href = "login.html";
 }

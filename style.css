@@ -8,7 +8,8 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffb3b3, #ffe6ea);
+  background: url("background.png") no-repeat center center fixed;
+  background-size: cover;
   color: #000;
   text-align: center;
 }
@@ -231,4 +232,8 @@ footer button {
   }
 }
 
+.hero-card,
+.letter-card {
+  backdrop-filter: blur(4px);
+}
 

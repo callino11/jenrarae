@@ -1,9 +1,5 @@
 function normalize(text) {
-  return text
-    .toLowerCase()
-    .replace(/,/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
+  return text.toLowerCase().replace(/,/g, "").replace(/\s+/g, " ").trim();
 }
 
 function checkAnswer() {
@@ -14,7 +10,6 @@ function checkAnswer() {
 
   const input = inputEl.value;
 
-  // 💖 OFFICIAL DATE
   const acceptedAnswers = [
     "december 14 2019",
     "dec 14 2019",
@@ -30,18 +25,12 @@ function checkAnswer() {
   );
 
   if (isCorrect) {
-    // ✅ hide error
     error.style.display = "none";
-
-    // ✅ login success
     localStorage.setItem("isLoggedIn", "true");
-
-    // 🎶 tell index.html to auto-play music
     localStorage.setItem("playMusic", "true");
-
-    // ✅ go to main page
     window.location.href = "index.html";
   } else {
     error.style.display = "block";
   }
 }
+

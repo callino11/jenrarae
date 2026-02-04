@@ -1,52 +1,30 @@
 /* ===============================
-   LOGIN PROTECTION
+   LOGIN CHECK (SAFE)
 ================================ */
-if (localStorage.getItem("isLoggedIn") !== "true") {
-  window.location.href = "login.html";
-}
+window.addEventListener("load", () => {
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+});
 
 /* ===============================
-   FLOATING HEARTS
-================================ */
-const heartsContainer = document.getElementById("hearts-container");
-
-function createHeart() {
-  if (!heartsContainer) return;
-
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.textContent = "💖";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = 3 + Math.random() * 3 + "s";
-
-  heartsContainer.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 6000);
-}
-
-if (heartsContainer) {
-  setInterval(createHeart, 400);
-}
-
-/* ===============================
-   MUSIC CONTROL (MP3)
+   MUSIC CONTROL
 ================================ */
 const musicBtn = document.getElementById("music-btn");
 const bgMusic = document.getElementById("bg-music");
 
-let isPlaying = false;
+let playing = false;
 
 if (musicBtn && bgMusic) {
   musicBtn.addEventListener("click", () => {
-    if (!isPlaying) {
+    if (!playing) {
       bgMusic.play();
       musicBtn.textContent = "⏸ Pause Music";
     } else {
       bgMusic.pause();
       musicBtn.textContent = "▶ Play Music";
     }
-    isPlaying = !isPlaying;
+    playing = !playing;
   });
 }
 
@@ -63,11 +41,11 @@ window.addEventListener("load", () => {
 });
 
 /* ===============================
-   LOGOUT
+   LOGOUT (GLOBAL)
 ================================ */
 function logout() {
-  localStorage.removeItem("isLoggedIn");
-  localStorage.removeItem("playMusic");
+  localStorage.clear();
   window.location.href = "login.html";
 }
+
 

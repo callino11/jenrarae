@@ -26,32 +26,23 @@
       max-width: 380px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
-    input {
+    input, button {
       width: 100%;
       padding: 12px;
-      margin: 15px 0;
+      margin-top: 12px;
       border-radius: 8px;
-      border: 1px solid #ccc;
       font-size: 16px;
-      text-align: center;
     }
     button {
-      width: 100%;
-      padding: 12px;
       background: #ff5e78;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
       cursor: pointer;
-    }
-    button:hover {
-      background: #ff3f5e;
     }
     .error {
       color: #ff3f5e;
-      margin-top: 10px;
       display: none;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -61,19 +52,13 @@
     <h2>💖 One Question 💖</h2>
     <p>What date is our anniversary?</p>
 
-    <input
-      type="text"
-      id="answer"
-      placeholder="Example: December 14, 2019"
-      autocomplete="off"
-    >
+    <input id="answer" placeholder="December 14, 2019" autocomplete="off">
 
-    <button type="button" onclick="checkAnswer()">Continue 💕</button>
+    <button onclick="checkAnswer()">Continue 💕</button>
 
-    <p class="error" id="error">Hmm… that doesn’t feel right 💔</p>
+    <p class="error" id="error">That’s not it 💔</p>
   </div>
 
   <script src="login.js"></script>
 </body>
 </html>
-

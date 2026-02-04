@@ -2,7 +2,7 @@
    GLOBAL STYLES
 ================================ */
 body {
-  margin: 12;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   color: #000;
@@ -125,7 +125,7 @@ body {
 .letter-card h3 {
   margin-top: 20px;
   margin-bottom: 15px;
-  color: #000;
+  color: ##ff5e78;
 }
 
 .letter-card p {

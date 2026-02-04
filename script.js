@@ -14,9 +14,8 @@ function createHeart() {
   if (!heartsContainer) return;
 
   const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.textContent = "💖";
-
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = 3 + Math.random() * 3 + "s";
 
@@ -27,54 +26,47 @@ function createHeart() {
   }, 6000);
 }
 
-// Start floating hearts only if container exists
-if (heartsContainer) {
-  setInterval(createHeart, 400);
-}
+// start floating hearts
+setInterval(createHeart, 400);
 
 /* ===============================
-   MUSIC CONTROL (FACEBOOK)
+   YOUTUBE MUSIC CONTROL
 ================================ */
 const musicBtn = document.getElementById("music-btn");
-const fbMusic = document.getElementById("fb-music");
+const ytMusic = document.getElementById("yt-music");
 
 let musicStarted = false;
 
-function playFacebookMusic() {
-  if (!fbMusic || musicStarted) return;
+if (musicBtn && ytMusic) {
+  musicBtn.addEventListener("click", () => {
+    if (!musicStarted) {
+      // Start & unmute YouTube music
+      ytMusic.src = ytMusic.src.includes("mute=1")
+        ? ytMusic.src.replace("mute=1", "mute=0&autoplay=1")
+        : ytMusic.src + "&autoplay=1";
 
-  fbMusic.src =
-    "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1FQETqSHF7/&show_text=false&autoplay=true&mute=0";
-
-  musicStarted = true;
-
-  if (musicBtn) {
-    musicBtn.textContent = "🎵 Music Playing";
-  }
-}
-
-if (musicBtn) {
-  musicBtn.addEventListener("click", playFacebookMusic);
+      musicBtn.textContent = "🎵 Music Playing";
+      musicStarted = true;
+    }
+  });
 }
 
 /* ===============================
-   AUTO PLAY AFTER LOGIN
+   AUTO PLAY AFTER LOGIN (OPTIONAL)
 ================================ */
-window.addEventListener("load", () => {
-  if (localStorage.getItem("playMusic") === "true") {
+if (localStorage.getItem("playMusic") === "true") {
+  window.addEventListener("load", () => {
     setTimeout(() => {
-      playFacebookMusic();
+      musicBtn?.click();
       localStorage.removeItem("playMusic");
     }, 800);
-  }
-});
+  });
+}
 
 /* ===============================
    ON LOAD EFFECT
 ================================ */
 window.addEventListener("load", () => {
-  if (!heartsContainer) return;
-
   for (let i = 0; i < 15; i++) {
     setTimeout(createHeart, i * 200);
   }
@@ -87,4 +79,6 @@ function logout() {
   localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("playMusic");
   window.location.href = "login.html";
+}
+
 }

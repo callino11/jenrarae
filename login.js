@@ -3,12 +3,8 @@ function normalize(text) {
 }
 
 function checkAnswer() {
-  const inputEl = document.getElementById("answer");
+  const input = document.getElementById("answer").value;
   const error = document.getElementById("error");
-
-  if (!inputEl || !error) return;
-
-  const input = inputEl.value;
 
   const acceptedAnswers = [
     "december 14 2019",
@@ -18,14 +14,11 @@ function checkAnswer() {
     "14 december 2019"
   ];
 
-  const userAnswer = normalize(input);
-
   const isCorrect = acceptedAnswers.some(
-    answer => normalize(answer) === userAnswer
+    a => normalize(a) === normalize(input)
   );
 
   if (isCorrect) {
-    error.style.display = "none";
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("playMusic", "true");
     window.location.href = "index.html";
@@ -33,4 +26,3 @@ function checkAnswer() {
     error.style.display = "block";
   }
 }
-

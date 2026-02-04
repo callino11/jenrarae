@@ -1,4 +1,9 @@
-// Floating Hearts
+// LOGIN PROTECTION
+if (localStorage.getItem("isLoggedIn") !== "true") {
+  window.location.href = "login.html";
+}
+
+// FLOATING HEARTS
 const heartsContainer = document.getElementById("hearts-container");
 
 function createHeart() {
@@ -16,7 +21,7 @@ function createHeart() {
 
 setInterval(createHeart, 400);
 
-// Music Control
+// MUSIC
 const musicBtn = document.getElementById("music-btn");
 const bgMusic = document.getElementById("bg-music");
 
@@ -33,9 +38,15 @@ musicBtn.addEventListener("click", () => {
   isPlaying = !isPlaying;
 });
 
-// Sparkle Effect on Load
+// ON LOAD
 window.onload = () => {
   for (let i = 0; i < 15; i++) {
     setTimeout(createHeart, i * 200);
   }
 };
+
+// LOGOUT
+function logout() {
+  localStorage.removeItem("isLoggedIn");
+  window.location.href = "login.html";
+}

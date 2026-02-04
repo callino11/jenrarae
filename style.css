@@ -2,11 +2,12 @@
    GLOBAL STYLES
 ================================ */
 body {
-  margin: 0;
+  margin: 12;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   color: #000;
   text-align: center;
+   
 }
 
 /* ===============================

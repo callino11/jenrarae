@@ -1,9 +1,13 @@
-/* LOGIN CHECK */
+/*************************
+ LOGIN PROTECTION
+*************************/
 if (localStorage.getItem("isLoggedIn") !== "true") {
   window.location.href = "login.html";
 }
 
-/* FLOATING HEARTS */
+/*************************
+ FLOATING HEARTS
+*************************/
 const heartsContainer = document.getElementById("hearts-container");
 
 function createHeart() {
@@ -21,28 +25,46 @@ function createHeart() {
 
 setInterval(createHeart, 400);
 
-/* MUSIC */
+/*************************
+ MUSIC CONTROL
+*************************/
 const musicBtn = document.getElementById("music-btn");
 const ytMusic = document.getElementById("yt-music");
-let playing = false;
+
+let musicPlaying = false;
+
+function playMusic() {
+  ytMusic.src =
+    "https://www.youtube.com/embed/KrvzDsiBgn4?enablejsapi=1&autoplay=1&mute=0";
+  musicBtn.textContent = "⏸ Pause Music";
+  musicPlaying = true;
+}
+
+function pauseMusic() {
+  ytMusic.src =
+    "https://www.youtube.com/embed/KrvzDsiBgn4?enablejsapi=1&autoplay=0&mute=1";
+  musicBtn.textContent = "▶ Play Music";
+  musicPlaying = false;
+}
 
 musicBtn.addEventListener("click", () => {
-  if (!playing) {
-    ytMusic.src =
-      "https://www.youtube.com/embed/KrvzDsiBgn4?autoplay=1&mute=0";
-    musicBtn.textContent = "⏸ Pause Music";
-  } else {
-    ytMusic.src =
-      "https://www.youtube.com/embed/KrvzDsiBgn4?autoplay=0&mute=1";
-    musicBtn.textContent = "▶ Play Music";
-  }
-  playing = !playing;
+  musicPlaying ? pauseMusic() : playMusic();
 });
 
-/* LOGOUT */
+/*************************
+ AUTO PLAY AFTER LOGIN
+*************************/
+window.addEventListener("load", () => {
+  if (localStorage.getItem("playMusic") === "true") {
+    setTimeout(playMusic, 800);
+    localStorage.removeItem("playMusic");
+  }
+});
+
+/*************************
+ LOGOUT
+*************************/
 function logout() {
   localStorage.removeItem("isLoggedIn");
   window.location.href = "login.html";
 }
-
-

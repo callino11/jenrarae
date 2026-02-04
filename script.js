@@ -1,17 +1,24 @@
-// LOGIN PROTECTION
+/* ===============================
+   LOGIN PROTECTION
+================================ */
 if (localStorage.getItem("isLoggedIn") !== "true") {
   window.location.href = "login.html";
 }
 
-// FLOATING HEARTS
+/* ===============================
+   FLOATING HEARTS
+================================ */
 const heartsContainer = document.getElementById("hearts-container");
 
 function createHeart() {
+  if (!heartsContainer) return;
+
   const heart = document.createElement("div");
   heart.classList.add("heart");
   heart.innerHTML = "💖";
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = 3 + Math.random() * 3 + "s";
+
   heartsContainer.appendChild(heart);
 
   setTimeout(() => {
@@ -21,31 +28,39 @@ function createHeart() {
 
 setInterval(createHeart, 400);
 
-// MUSIC
+/* ===============================
+   MUSIC CONTROL
+================================ */
 const musicBtn = document.getElementById("music-btn");
 const bgMusic = document.getElementById("bg-music");
 
 let isPlaying = false;
 
-musicBtn.addEventListener("click", () => {
-  if (!isPlaying) {
-    bgMusic.play();
-    musicBtn.textContent = "⏸ Pause Music";
-  } else {
-    bgMusic.pause();
-    musicBtn.textContent = "▶ Play Music";
-  }
-  isPlaying = !isPlaying;
-});
+if (musicBtn && bgMusic) {
+  musicBtn.addEventListener("click", () => {
+    if (!isPlaying) {
+      bgMusic.play();
+      musicBtn.textContent = "⏸ Pause Music";
+    } else {
+      bgMusic.pause();
+      musicBtn.textContent = "▶ Play Music";
+    }
+    isPlaying = !isPlaying;
+  });
+}
 
-// ON LOAD
-window.onload = () => {
+/* ===============================
+   ON LOAD EFFECT
+================================ */
+window.addEventListener("load", () => {
   for (let i = 0; i < 15; i++) {
     setTimeout(createHeart, i * 200);
   }
-};
+});
 
-// LOGOUT
+/* ===============================
+   LOGOUT
+================================ */
 function logout() {
   localStorage.removeItem("isLoggedIn");
   window.location.href = "login.html";

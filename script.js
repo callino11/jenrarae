@@ -32,23 +32,20 @@ setInterval(createHeart, 400);
    MUSIC CONTROL
 ================================ */
 const musicBtn = document.getElementById("music-btn");
-const bgMusic = document.getElementById("bg-music");
+const ytMusic = document.getElementById("yt-music");
 
-let isPlaying = false;
+let musicStarted = false;
 
-if (musicBtn && bgMusic) {
+if (musicBtn && ytMusic) {
   musicBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-      bgMusic.play();
-      musicBtn.textContent = "⏸ Pause Music";
-    } else {
-      bgMusic.pause();
-      musicBtn.textContent = "▶ Play Music";
+    if (!musicStarted) {
+      // unmute & start playback
+      ytMusic.src = ytMusic.src.replace("&mute=1", "&mute=0&autoplay=1");
+      musicBtn.textContent = "🎵 Music Playing";
+      musicStarted = true;
     }
-    isPlaying = !isPlaying;
   });
 }
-
 /* ===============================
    ON LOAD EFFECT
 ================================ */

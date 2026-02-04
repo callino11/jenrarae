@@ -10,7 +10,7 @@ function checkAnswer() {
   const inputEl = document.getElementById("answer");
   const error = document.getElementById("error");
 
-  if (!inputEl) return;
+  if (!inputEl || !error) return;
 
   const input = inputEl.value;
 
@@ -30,8 +30,16 @@ function checkAnswer() {
   );
 
   if (isCorrect) {
+    // ✅ hide error
     error.style.display = "none";
+
+    // ✅ login success
     localStorage.setItem("isLoggedIn", "true");
+
+    // 🎶 tell index.html to auto-play music
+    localStorage.setItem("playMusic", "true");
+
+    // ✅ go to main page
     window.location.href = "index.html";
   } else {
     error.style.display = "block";

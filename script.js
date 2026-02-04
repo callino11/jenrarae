@@ -14,8 +14,9 @@ function createHeart() {
   if (!heartsContainer) return;
 
   const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "💖";
+  heart.className = "heart";
+  heart.textContent = "💖";
+
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = 3 + Math.random() * 3 + "s";
 
@@ -26,8 +27,10 @@ function createHeart() {
   }, 6000);
 }
 
-// start floating hearts
-setInterval(createHeart, 400);
+// Start floating hearts only if container exists
+if (heartsContainer) {
+  setInterval(createHeart, 400);
+}
 
 /* ===============================
    MUSIC CONTROL (FACEBOOK)
@@ -37,36 +40,41 @@ const fbMusic = document.getElementById("fb-music");
 
 let musicStarted = false;
 
-if (musicBtn && fbMusic) {
-  musicBtn.addEventListener("click", () => {
-    if (!musicStarted) {
-      // reload iframe with autoplay + unmute
-      fbMusic.src =
-        "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1FQETqSHF7/&show_text=false&autoplay=true&mute=0";
+function playFacebookMusic() {
+  if (!fbMusic || musicStarted) return;
 
-      musicBtn.textContent = "🎵 Music Playing";
-      musicStarted = true;
-    }
-  });
+  fbMusic.src =
+    "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1FQETqSHF7/&show_text=false&autoplay=true&mute=0";
+
+  musicStarted = true;
+
+  if (musicBtn) {
+    musicBtn.textContent = "🎵 Music Playing";
+  }
 }
 
+if (musicBtn) {
+  musicBtn.addEventListener("click", playFacebookMusic);
+}
 
 /* ===============================
-   AUTO PLAY AFTER LOGIN (OPTIONAL)
+   AUTO PLAY AFTER LOGIN
 ================================ */
-if (localStorage.getItem("playMusic") === "true") {
-  window.addEventListener("load", () => {
+window.addEventListener("load", () => {
+  if (localStorage.getItem("playMusic") === "true") {
     setTimeout(() => {
-      musicBtn?.click();
+      playFacebookMusic();
       localStorage.removeItem("playMusic");
     }, 800);
-  });
-}
+  }
+});
 
 /* ===============================
    ON LOAD EFFECT
 ================================ */
 window.addEventListener("load", () => {
+  if (!heartsContainer) return;
+
   for (let i = 0; i < 15; i++) {
     setTimeout(createHeart, i * 200);
   }

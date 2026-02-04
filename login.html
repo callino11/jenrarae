@@ -68,15 +68,17 @@
 
   <div class="question-box">
     <h2>💖 One Question 💖</h2>
-    <p>What date are we officially dating?</p>
+    <p>What date is our anniversary?</p>
 
     <input
       type="text"
       id="answer"
-      placeholder="Example: February 14, 2024"
+      placeholder="Example: December 14, 2019"
+      autocomplete="off"
     >
 
-    <button onclick="checkAnswer()">Continue 💕</button>
+    <!-- ✅ IMPORTANT FIX -->
+    <button type="button" onclick="checkAnswer()">Continue 💕</button>
 
     <p class="error" id="error">Hmm… that doesn’t feel right 💔</p>
   </div>
@@ -84,5 +86,6 @@
   <script src="login.js"></script>
 </body>
 </html>
+
 
 

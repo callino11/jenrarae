@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login 💖</title>
+  <title>One Question 💕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -18,23 +18,28 @@
       margin: 0;
     }
 
-    .login-box {
+    .question-box {
       background: white;
       padding: 30px;
       border-radius: 15px;
       text-align: center;
       width: 90%;
-      max-width: 350px;
+      max-width: 380px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 15px;
     }
 
     input {
       width: 100%;
       padding: 12px;
-      margin: 12px 0;
+      margin: 15px 0;
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 16px;
+      text-align: center;
     }
 
     button {
@@ -53,7 +58,7 @@
     }
 
     .error {
-      color: red;
+      color: #ff3f5e;
       margin-top: 10px;
       display: none;
     }
@@ -61,16 +66,22 @@
 </head>
 <body>
 
-  <div class="login-box">
-    <h2>💖 Welcome My Love 💖</h2>
-    <p>Enter the password</p>
+  <div class="question-box">
+    <h2>💖 One Question 💖</h2>
+    <p>What date is our anniversarry?</p>
 
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
+    <input
+      type="text"
+      id="answer"
+      placeholder="Example: February 14, 2024"
+    >
 
-    <p class="error" id="error">Wrong password 💔</p>
+    <button onclick="checkAnswer()">Continue 💕</button>
+
+    <p class="error" id="error">Hmm… that doesn’t feel right 💔</p>
   </div>
 
   <script src="login.js"></script>
 </body>
 </html>
+

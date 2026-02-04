@@ -30,26 +30,26 @@ function createHeart() {
 setInterval(createHeart, 400);
 
 /* ===============================
-   YOUTUBE MUSIC CONTROL
+   MUSIC CONTROL (FACEBOOK)
 ================================ */
 const musicBtn = document.getElementById("music-btn");
-const ytMusic = document.getElementById("yt-music");
+const fbMusic = document.getElementById("fb-music");
 
 let musicStarted = false;
 
-if (musicBtn && ytMusic) {
+if (musicBtn && fbMusic) {
   musicBtn.addEventListener("click", () => {
     if (!musicStarted) {
-      // Start & unmute YouTube music
-      ytMusic.src = ytMusic.src.includes("mute=1")
-        ? ytMusic.src.replace("mute=1", "mute=0&autoplay=1")
-        : ytMusic.src + "&autoplay=1";
+      // reload iframe with autoplay + unmute
+      fbMusic.src =
+        "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1FQETqSHF7/&show_text=false&autoplay=true&mute=0";
 
       musicBtn.textContent = "🎵 Music Playing";
       musicStarted = true;
     }
   });
 }
+
 
 /* ===============================
    AUTO PLAY AFTER LOGIN (OPTIONAL)

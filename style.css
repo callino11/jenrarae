@@ -236,5 +236,15 @@ footer button {
   box-shadow: 0 20px 45px rgba(0,0,0,0.18);
   backdrop-filter: blur(4px);
 }
+.hero {
+  min-height: 90vh;
+  background: #fff0f3; /* SAME as .letter section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
 
 

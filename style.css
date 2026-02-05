@@ -63,10 +63,10 @@ body {
 
 /* HERO TEXT */
 .hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(3rem, 7vw, 12rem);
+font-family: 'Great Vibes', cursive;
+  font-size: clamp(4.5rem, 9vw, 14rem);
   line-height: 1.1;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .subtitle {

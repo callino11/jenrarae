@@ -47,7 +47,7 @@ body {
 ================================ */
 .hero {
   min-height: 90vh;
-  background: linear-gradient(180deg, #ffc1c8, #ffe9ed);
+
   display: flex;
   justify-content: center;
   align-items: center;

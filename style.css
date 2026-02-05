@@ -1,7 +1,6 @@
 
 :root {
-  --primary-pink: #ff5e78;
-  --primary-pink-hover: #ff3f5f;
+  --button-bg: #ff5e78;
 }
 body {
   margin: 0;
@@ -191,6 +190,8 @@ font-family: 'Great Vibes', cursive;
 .music-player button:hover {
   background: var(--primary-pink-hover);
   transform: scale(1.08);
+ background-color: var(--button-bg);
+}
 }
 
 /* ===============================

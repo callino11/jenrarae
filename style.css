@@ -1,16 +1,17 @@
 
 :root {
   --button-bg: #ff5e78;
+  --button-bg-hover: #ff3f5f;
 }
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-
-background-color: #ffdde3
-  background-size:  ;
+  background-color: #ffdde3;
   color: #000;
   text-align: center;
 }
+
 
 /* ===============================
    FLOATING HEARTS
@@ -186,14 +187,14 @@ font-family: 'Great Vibes', cursive;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   transition: transform 0.25s ease, background 0.25s ease;
-  background: var(--primary-pink);
+  background: var(--button-bg);
 }
 
 .music-player button:hover {
-  background: var(--primary-pink-hover);
+  background: var(--button-bg-hover);
   transform: scale(1.08);
- background-color: var(--button-bg);
 }
+
 }
 
 /* ===============================
@@ -201,14 +202,14 @@ font-family: 'Great Vibes', cursive;
 ================================ */
 footer {
   padding: 35px 20px;
-   background: #ffdde3;
+  background: #ffdde3;
 }
 
 footer button {
   margin-top: 12px;
   padding: 10px 24px;
   border-radius: 25px;
-  background: var(--primary-pink);
+  background: var(--button-bg);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -216,9 +217,10 @@ footer button {
 }
 
 footer button:hover {
-  background: var(--primary-pink-hover);
+  background: var(--button-bg-hover);
   transform: scale(1.05);
 }
+
 
 /* ===============================
    MOBILE TWEAKS
@@ -247,10 +249,7 @@ footer button:hover {
   position: relative;
   z-index: 1;
 }
-.music-player {
-  background-color: #ffdde3 !important;
-  
-}
+
 .music-player,
 footer {
   margin: 0;

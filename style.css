@@ -72,7 +72,7 @@ body {
 }
 
 .subtitle {
-  font-size: 3.9rem;
+  font-size:(4.5rem, 9vw, 10rem);
   margin-bottom: 10px;
   font-family: 'Great Vibes', cursive;
 }

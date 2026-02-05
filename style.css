@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 
+background-color: #ffdde3
   background-size:  ;
   color: #000;
   text-align: center;
@@ -138,7 +139,7 @@ font-family: 'Great Vibes', cursive;
 ================================ */
 .memories {
   padding: 80px 20px;
-  background: #fff6f8;
+  background-color: #ffdde3;
 }
 
 .memories h3 {

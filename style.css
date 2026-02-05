@@ -4,6 +4,7 @@
   --button-bg-hover: #ff3f5f;
 }
 
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -17,7 +18,7 @@ body {
    FLOATING HEARTS
 ================================ */
 #hearts-container {
-    position: fixed;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 999;
@@ -41,12 +42,13 @@ body {
   }
 }
 
+
 /* ===============================
    HERO SECTION
 ================================ */
 .hero {
-  min-height: 50vh;
-  background: linear-gradient(180deg, #ffc1c8, #ffe9ed);
+  min-height: 90vh;
+  background: #fff0f3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,6 +57,7 @@ body {
   z-index: 1;
 }
 
+
 /* ===============================
    HERO LETTER CARD
 ================================ */
@@ -62,7 +65,7 @@ body {
 
 /* HERO TEXT */
 .hero h1 {
-font-family: 'Great Vibes', cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: clamp(4.5rem, 9vw, 14rem);
   line-height: 1.1;
   margin-bottom: 10px;
@@ -97,7 +100,6 @@ font-family: 'Great Vibes', cursive;
   border-radius: 30px;
   box-shadow: 0 20px 45px rgba(0,0,0,0.18);
   position: relative;
-  backdrop-filter: blur(4px);
 }
 
 .letter-card::before {
@@ -106,7 +108,7 @@ font-family: 'Great Vibes', cursive;
   top: -22px;
   left: 50%;
   transform: translateX(-50%);
-  background: #ff5e78;
+  background: var(--button-bg);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -116,6 +118,7 @@ font-family: 'Great Vibes', cursive;
   font-size: 22px;
   color: #fff;
 }
+
 
 .letter-card h3 {
   margin-top: 28px;
@@ -142,6 +145,7 @@ font-family: 'Great Vibes', cursive;
   padding: 80px 20px;
   background-color: #ffdde3;
 }
+
 
 .memories h3 {
   font-size: 1.8rem;
@@ -175,41 +179,39 @@ font-family: 'Great Vibes', cursive;
 ================================ */
 .music-player {
   padding: 50px 0;
-  background: #ffdde3;
+  background-color: #ffdde3;
 }
 
 .music-player button {
   padding: 14px 34px;
   border-radius: 50px;
+  background-color: var(--button-bg);
   color: #fff;
   border: none;
   font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   transition: transform 0.25s ease, background 0.25s ease;
-  background: var(--button-bg);
 }
 
 .music-player button:hover {
-  background: var(--button-bg-hover);
+  background-color: var(--button-bg-hover);
   transform: scale(1.08);
 }
 
-}
 
 /* ===============================
    FOOTER
 ================================ */
 footer {
-  padding: 35px 20px;
-  background: #ffdde3;
+  padding: 60px 20px;
+  background-color: #ffdde3;
 }
 
 footer button {
-  margin-top: 12px;
   padding: 10px 24px;
   border-radius: 25px;
-  background: var(--button-bg);
+  background-color: var(--button-bg);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -217,19 +219,16 @@ footer button {
 }
 
 footer button:hover {
-  background: var(--button-bg-hover);
+  background-color: var(--button-bg-hover);
   transform: scale(1.05);
 }
+
 
 
 /* ===============================
    MOBILE TWEAKS
 ================================ */
 @media (max-width: 480px) {
-  .hero-card {
-    padding: 38px 26px;
-  }
-
   .names {
     font-size: 2.3rem;
   }
@@ -239,19 +238,4 @@ footer button:hover {
   }
 }
 
-.hero {
-  min-height: 90vh;
-  background: #fff0f3; /* SAME as .letter section */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.music-player,
-footer {
-  margin: 0;
-}
 

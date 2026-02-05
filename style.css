@@ -180,6 +180,7 @@ font-family: 'Great Vibes', cursive;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   transition: transform 0.25s ease;
+  background: #fff0f3;
 }
 
 .music-player button:hover {

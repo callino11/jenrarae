@@ -140,6 +140,20 @@ body {
   font-style: italic;
   font-weight: 500;
 }
+.video-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 15px;
+}
+
 
 
 /* ===============================
